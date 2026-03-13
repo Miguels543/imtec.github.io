@@ -1,0 +1,125 @@
+/* ========================================
+   INDEX.CSS - ESTILOS ESPECÍFICOS INDEX.HTML
+   ======================================== */
+
+.presentation-item {
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.presentation-item.selected {
+  border-color: var(--primary);
+  background-color: rgba(184, 161, 130, 0.1);
+}
+
+.presentation-item:hover {
+  border-color: var(--primary);
+}
+
+.pres-info {
+  flex: 1;
+}
+
+.pres-name {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+}
+
+.pres-price {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.pres-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty-btn {
+  background-color: var(--border-light);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.qty-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.qty-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qty-display {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.remove-pres-btn {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.remove-pres-btn:hover {
+  background-color: #e84342;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    margin: 0.5rem;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .modal-body {
+    flex-direction: column;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .modal-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .modal-details {
+    padding: 0;
+  }
+
+  .presentation-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .pres-controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roses Bienestar - Nutrición y Cuidado Natural Premium</title>
+  <meta name="description" content="Aceites extra virgen, colágeno puro, cacao y café orgánico, jabones artesanales. Cuídate con intención.">
+  <link rel="stylesheet" href="assets/css/globals.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/cart.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/checkout.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- SCRIPTS -->
+  <script src="assets/js/toast.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+</head>
+<body>
+  
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        IMTEC<span>.</span>
+      </div>
+
+      <nav id="nav">
+        <a href="index.html">Inicio</a>
+        <a href="catalog.html">Catálogo</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <button class="cart-icon" id="cartBtn" title="Ver cotización">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Cotizar
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- CARRITO -->
+  <section class="cart-section">
+    <div class="cart-container">
+      <div class="cart-header">
+        <p class="cart-header-eyebrow">
+          <span></span>Tu lista<span></span>
+        </p>
+        <h1>Cotización</h1>
+        <p class="cart-header-sub">Revisa tus productos antes de enviar tu pedido</p>
+      </div>
+      <div id="cartContent"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-watermark">Roses</div>
+    <div class="footer-main">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo">Roses<span>.</span></p>
+          <p class="footer-tagline">Nutrición &amp; Cuidado Natural</p>
+          <div class="footer-brand-divider"><span></span><i>✦</i><span></span></div>
+          <p class="footer-desc">Productos premium elaborados con ingredientes puros, prensados en frío y seleccionados con intención. Porque cuidarte bien es el primer ritual.</p>
+          <div class="footer-badge">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor"/><path d="M3.5 5.5l1.5 1.5L7.5 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100% Orgánico · Sin aditivos
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Explorar</h5>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="#">Sobre Roses</a></li>
+            <li><a href="#">Distribuidores</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Productos</h5>
+          <ul>
+            <li><a href="#">Aceites Extra Virgen</a></li>
+            <li><a href="#">Colágeno Puro</a></li>
+            <li><a href="#">Cacao Orgánico</a></li>
+            <li><a href="#">Café Especial</a></li>
+            <li><a href="#">Jabones Artesanales</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contáctanos</h5>
+          <div style="margin-bottom: 1.75rem;">
+            <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><a href="tel:+51900000000">+51 900 000 000</a></div>
+            <div class="footer-contact-item"><div class="footer-contact-icon">💬</div><a href="https://wa.me/51900000000" target="_blank">WhatsApp</a></div>
+            <div class="footer-contact-item"><div class="footer-contact-icon">✉️</div><a href="mailto:info@roses.com">info@roses.com</a></div>
+          </div>
+          <div class="footer-social">
+            <a href="#"><div class="footer-social-icon">📸</div><span>Instagram</span></a>
+            <a href="#"><div class="footer-social-icon">f</div><span>Facebook</span></a>
+            <a href="#"><div class="footer-social-icon">🎵</div><span>TikTok</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2026 <strong>Roses Bienestar</strong>. Todos los derechos reservados.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Política de Privacidad</a>
+        <div class="footer-bottom-sep"></div>
+        <a href="#">Términos de Uso</a>
+        <div class="footer-bottom-sep"></div>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       CHECKOUT MODAL — agregar antes de </body>
+  ═══════════════════════════════════════ -->
+  <div class="checkout-overlay" id="checkoutOverlay">
+    <div class="checkout-modal">
+
+      <!-- Header -->
+      <div class="checkout-modal-header">
+        <div>
+          <p class="checkout-eyebrow"><span></span>Paso final<span></span></p>
+          <h2>Datos de entrega</h2>
+        </div>
+        <button class="checkout-close" id="checkoutClose" aria-label="Cerrar">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Resumen productos -->
+      <div class="checkout-summary" id="checkoutSummary"></div>
+
+      <!-- Formulario -->
+      <form class="checkout-form" id="checkoutForm" novalidate>
+
+        <div class="checkout-form-row">
+          <div class="checkout-field">
+            <label for="co-name">Nombre completo <span>*</span></label>
+            <input type="text" id="co-name" placeholder="Ana López" required>
+            <span class="checkout-field-error" id="err-name"></span>
+          </div>
+          <div class="checkout-field">
+            <label for="co-dni">DNI <span>*</span></label>
+            <input type="text" id="co-dni" placeholder="45231890" maxlength="8" required>
+            <span class="checkout-field-error" id="err-dni"></span>
+          </div>
+        </div>
+
+        <div class="checkout-form-row">
+          <div class="checkout-field">
+            <label for="co-email">Correo electrónico <span>*</span></label>
+            <input type="email" id="co-email" placeholder="ana@gmail.com" required>
+            <span class="checkout-field-error" id="err-email"></span>
+          </div>
+          <div class="checkout-field">
+            <label for="co-phone">Teléfono <span>*</span></label>
+            <input type="tel" id="co-phone" placeholder="+51 987 654 321" required>
+            <span class="checkout-field-error" id="err-phone"></span>
+          </div>
+        </div>
+
+        <div class="checkout-field">
+          <label for="co-address">Dirección de entrega <span>*</span></label>
+          <input type="text" id="co-address" placeholder="Av. Lima 123, Piura" required>
+          <span class="checkout-field-error" id="err-address"></span>
+        </div>
+
+        <div class="checkout-field">
+          <label for="co-notes">Notas adicionales <span class="optional">(opcional)</span></label>
+          <textarea id="co-notes" placeholder="Referencia, horario preferido, etc." rows="2"></textarea>
+        </div>
+
+        <label class="checkout-remember">
+          <input type="checkbox" id="co-remember" checked>
+          <span class="checkout-remember-box"></span>
+          <span>Recordar mis datos para la próxima vez</span>
+        </label>
+
+        <div class="checkout-total-row">
+          <span>Total a confirmar</span>
+          <strong id="checkoutTotal">S/ 0.00</strong>
+        </div>
+
+        <button type="submit" class="btn btn-primary checkout-submit">
+          Enviar pedido por WhatsApp
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 2.5C4.96 2.5 2.5 4.96 2.5 8c0 .97.26 1.88.71 2.67L2.5 13.5l2.9-.69A5.48 5.48 0 008 13.5c3.04 0 5.5-2.46 5.5-5.5S11.04 2.5 8 2.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M6 7.5c0-.28.22-.5.5-.5h3c.28 0 .5.22.5.5s-.22.5-.5.5h-3A.5.5 0 016 7.5zM6 9.5c0-.28.22-.5.5-.5h2c.28 0 .5.22.5.5s-.22.5-.5.5h-2A.5.5 0 016 9.5z" fill="currentColor"/>
+          </svg>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

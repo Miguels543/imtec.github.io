@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMTEC - Contacto</title>
+  <meta name="description" content="Importadores de tóner compatible e original, tintas para sistema continuo y reparación de impresoras láser en Piura. Marca propia IMTEC.">
+  <link rel="stylesheet" href="assets/css/globals.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/contact.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="assets/js/toast.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
+
+  <style>
+    .method-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      color: var(--primary);
+      background: var(--moss-light);
+      border: 1.5px solid var(--border-light);
+    }
+    .method-icon svg { display: block; }
+
+    .social-icon-svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(11,133,56,.1);
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .footer-contact-icon { color: #7DFFAA; background: rgba(255,255,255,.07); }
+    .footer-contact-icon svg { display: block; }
+    .footer-social-icon { color: #7DFFAA; }
+
+    .map-address {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--text-muted);
+      font-size: .9rem;
+      margin-top: .75rem;
+    }
+
+    #formSuccess .message-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: 50%;
+      color: #fff;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">IMTEC<span>.</span></div>
+
+      <nav id="nav">
+        <a href="index.html">Inicio</a>
+        <a href="catalog.html">Catálogo</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <button class="cart-icon" id="cartBtn" title="Ver cotización">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Cotizar
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO CONTACTO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" style="background-image: url('https://img.freepik.com/free-photo/woman-working-office-using-printer_23-2149456970.jpg?t=st=1773383596~exp=1773387196~hmac=527ed18f0552cc17a194ff8550710c94f9ffc4f17f0be597435ad6a0c56644e8&w=1060');"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__noise"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Importadores · Tóner · Consumibles · Piura</p>
+      <h1>IMTEC<br><em>Contáctanos</em></h1>
+      <div class="hero-divider">
+        <span></span>
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style="color:rgba(255,255,255,.8)">
+          <path d="M5 0L6.5 3.5L10 5L6.5 6.5L5 10L3.5 6.5L0 5L3.5 3.5Z"/>
+        </svg>
+        <span></span>
+      </div>
+      <p class="hero-sub">
+        Estamos aquí para responder todas tus consultas<br>sobre nuestros productos y servicios
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRINCIPAL DE CONTACTO -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- INFORMACIÓN DE CONTACTO -->
+        <div class="contact-info-container">
+          <div class="contact-info-card">
+            <h2>Información de Contacto</h2>
+            <p class="subtitle">Si tienes alguna pregunta sobre nuestros productos, envíos o cualquier otra consulta, no dudes en contactarnos.</p>
+
+            <div class="contact-methods">
+
+              <!-- WhatsApp -->
+              <div class="contact-method">
+                <div class="method-icon">
+                  <!-- Message / chat icon -->
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <h3>WhatsApp</h3>
+                  <a href="https://wa.me/51969981040" target="_blank" class="method-link">969 981 040</a>
+                  <p class="method-desc">Respuesta rápida por WhatsApp</p>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="contact-method">
+                <div class="method-icon">
+                  <!-- Mail icon -->
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <h3>Email</h3>
+                  <a href="mailto:imtecpiura@hotmail.com" class="method-link">imtecpiura@hotmail.com</a>
+                  <p class="method-desc">Envíanos un correo electrónico</p>
+                </div>
+              </div>
+
+              <!-- Horario -->
+              <div class="contact-method">
+                <div class="method-icon">
+                  <!-- Clock icon -->
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <h3>Horario de Atención</h3>
+                  <p class="schedule-item"><strong>Lunes a Viernes:</strong> 9:00 am – 6:00 pm</p>
+                  <p class="schedule-item"><strong>Sábados:</strong> 9:00 am – 1:00 pm</p>
+                  <p class="schedule-item closed">Domingos: Cerrado</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="social-section">
+              <h3>Síguenos en Redes Sociales</h3>
+              <div class="social-links-contact">
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@IMTEC" target="_blank" class="social-link">
+                  <span class="social-icon-svg">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+                      <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/>
+                    </svg>
+                  </span>
+                  <span class="social-handle">YouTube IMTEC</span>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/ImtecPiura" target="_blank" class="social-link">
+                  <span class="social-icon-svg">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                  </span>
+                  <span class="social-handle">ImtecPiura</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/imtec_peru" target="_blank" class="social-link">
+                  <span class="social-icon-svg">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                  </span>
+                  <span class="social-handle">@imtec_peru</span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- MAPA -->
+          <div class="map-container">
+            <h3>Nuestra Ubicación</h3>
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.2234567890123!2d-80.6323456!3d-5.1944444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMTEnNDAuMCJTIDgwwrAzNyc1Ni40Ilc!5e0!3m2!1ses!2spe!4v1234567890123!5m2!1ses!2spe"
+                width="100%"
+                height="350"
+                style="border:0; border-radius: 8px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <p class="map-address">
+              <!-- Pin icon -->
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);flex-shrink:0;">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Av. Loreto 212, Barrio Norte, Piura
+            </p>
+          </div>
+        </div>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <div class="contact-form-container">
+          <div class="form-card">
+            <h2>Envíanos un Mensaje</h2>
+            <p class="form-subtitle">Completa el formulario y te responderemos a la brevedad</p>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">Nombre <span class="required">*</span></label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Tu nombre" required>
+                  <span class="form-error" id="firstNameError">Por favor ingresa tu nombre</span>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Apellido <span class="required">*</span></label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Tu apellido" required>
+                  <span class="form-error" id="lastNameError">Por favor ingresa tu apellido</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo Electrónico <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                <span class="form-error" id="emailError">Por favor ingresa un correo válido</span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Teléfono / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+51 999 999 999">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Asunto <span class="required">*</span></label>
+                <select id="subject" name="subject" required>
+                  <option value="">Selecciona un asunto</option>
+                  <option value="producto">Consulta sobre productos</option>
+                  <option value="pedido">Estado de mi pedido</option>
+                  <option value="distribuidor">Quiero ser distribuidor</option>
+                  <option value="cotizacion">Solicitar cotización</option>
+                  <option value="otro">Otro</option>
+                </select>
+                <span class="form-error" id="subjectError">Por favor selecciona un asunto</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensaje <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <span class="form-error" id="messageError">Por favor escribe tu mensaje</span>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy" class="checkbox-label">
+                  Acepto la <a href="#" class="privacy-link">política de privacidad</a> y el tratamiento de mis datos
+                </label>
+                <span class="form-error" id="privacyError">Debes aceptar la política de privacidad</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span class="btn-text">Enviar Mensaje</span>
+                <span class="btn-loading" style="display: none;">Enviando...</span>
+              </button>
+            </form>
+
+            <div id="formSuccess" class="form-message success" style="display: none;">
+              <span class="message-icon">
+                <!-- Check icon -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              <p>¡Mensaje enviado exitosamente! Te responderemos pronto.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CTA -->
+  <section class="cta-section">
+    <div class="cta-arc"></div>
+    <div class="cta-line cta-line--left"></div>
+    <div class="cta-line cta-line--right"></div>
+
+    <div class="cta-content">
+      <p class="cta-eyebrow">Contáctenos hoy</p>
+      <h2>¿Necesita Tóner o<br><em>Reparación?</em></h2>
+      <div class="cta-divider">
+        <span></span>
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style="color:rgba(255,255,255,.6)">
+          <path d="M5 0L6.5 3.5L10 5L6.5 6.5L5 10L3.5 6.5L0 5L3.5 3.5Z"/>
+        </svg>
+        <span></span>
+      </div>
+      <p>Escríbanos por WhatsApp, llámenos o visítenos en Av. Loreto 212, Barrio Norte, Piura. Atendemos de lunes a sábado de 9:00 am a 8:00 pm.</p>
+      <div class="cta-buttons">
+        <a href="catalog.html" class="btn btn-primary">
+          Ver Catálogo
+          <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
+            <path d="M1 5h11M7.5 1l4.5 4-4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/51969981040" target="_blank" class="btn btn-ghost">
+          Contactar por WhatsApp
+        </a>
+      </div>
+      <p class="cta-trust">Lun–Sáb 9:00am–8:00pm · Av. Loreto 212 Barrio Norte · Delivery en Piura</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-watermark">IMTEC</div>
+
+    <div class="footer-main">
+      <div class="footer-grid">
+
+        <!-- MARCA -->
+        <div class="footer-brand">
+          <p class="footer-logo">IMTEC<span>.</span></p>
+          <p class="footer-tagline">Import &amp; Tecnología EIRL · Piura</p>
+          <div class="footer-brand-divider">
+            <span></span>
+            <svg width="8" height="8" viewBox="0 0 10 10" fill="rgba(255,255,255,.5)">
+              <path d="M5 0L6.5 3.5L10 5L6.5 6.5L5 10L3.5 6.5L0 5L3.5 3.5Z"/>
+            </svg>
+            <span></span>
+          </div>
+          <p class="footer-desc">
+            Importadores especializados en tóner compatible, tintas para sistema continuo
+            y reparación de impresoras láser en Piura. Marca propia IMTEC — calidad garantizada.
+          </p>
+          <div class="footer-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Lun–Sáb 9:00am – 8:00pm
+          </div>
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="footer-col">
+          <h5>Explorar</h5>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- CATEGORÍAS -->
+        <div class="footer-col">
+          <h5>Productos</h5>
+          <ul>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <polyline points="6 9 6 2 18 2 18 9"/>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                  <rect x="6" y="14" width="12" height="8"/>
+                </svg>
+                Tóner Compatible IMTEC
+              </a>
+            </li>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+                Tóner Original
+              </a>
+            </li>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+                </svg>
+                Tintas Sistema Continuo
+              </a>
+            </li>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+                Reparación Impresoras
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-col">
+          <h5>Contáctenos</h5>
+          <div style="margin-bottom: 1.75rem;">
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <a href="tel:+51942086775">942 086 775 / 985 851 870</a>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <a href="https://wa.me/51969981040" target="_blank">WhatsApp: 969 981 040</a>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <a href="mailto:imtecpiura@hotmail.com">imtecpiura@hotmail.com</a>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <a href="https://maps.google.com/?q=Av+Loreto+212+Piura" target="_blank">Av. Loreto 212, Barrio Norte, Piura</a>
+            </div>
+
+          </div>
+
+          <div class="footer-social">
+            <a href="https://www.instagram.com/imtec_peru" target="_blank">
+              <div class="footer-social-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <span>@imtec_peru</span>
+            </a>
+            <a href="https://www.facebook.com/ImtecPiura" target="_blank">
+              <div class="footer-social-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </div>
+              <span>ImtecPiura</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">
+        &copy; 2026 <strong>Import &amp; Tecnología EIRL (IMTEC Piura)</strong>. Todos los derechos reservados.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Política de Privacidad</a>
+        <div class="footer-bottom-sep"></div>
+        <a href="#">Términos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRITO LATERAL -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3 style="display:flex;align-items:center;gap:.5rem;color:var(--primary);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"/>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+          <rect x="6" y="14" width="12" height="8"/>
+        </svg>
+        Mi Cotización
+      </h3>
+      <button class="cart-close-btn" id="cartClose">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-sidebar-footer">
+      <div class="cart-total">
+        <span>Total estimado:</span>
+        <span id="cartTotal">S/. 0.00</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn" style="width:100%; margin-bottom:.75rem;" onclick="window.location.href='cart.html'">
+        Ver cotización completa
+        <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
+          <path d="M1 5h11M7.5 1l4.5 4-4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="btn btn-secondary" style="width:100%;" onclick="document.getElementById('cartSidebar').classList.remove('open')">
+        Seguir viendo
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Producto</h2>
+        <button class="modal-close" onclick="closeModal()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="" class="modal-image">
+        <div class="modal-details">
+          <h3>Descripción</h3>
+          <p id="modalDesc">Consumible IMTEC de alta calidad. Consulte disponibilidad y precios.</p>
+          <div class="presentations-section">
+            <h3>Opciones Disponibles</h3>
+            <div id="presentationsContainer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+        <button class="btn btn-primary" onclick="addSelectedToCart()">Agregar a Cotización</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+      document.body.classList.toggle('nav-open');
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        document.body.classList.remove('nav-open');
+      });
+    });
+
+    function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = cart.length;
+    }
+
+    document.getElementById('cartBtn').addEventListener('click', () => {
+      document.getElementById('cartSidebar').classList.add('open');
+    });
+
+    document.getElementById('cartClose').addEventListener('click', () => {
+      document.getElementById('cartSidebar').classList.remove('open');
+    });
+
+    updateCartBadge();
+  </script>
+</body>
+</html>

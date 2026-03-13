@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IMTEC — Panel de Administración</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/crm/css/admin.css" type="text/css" />
+  <script src="/crm/js/admin.js" defer></script>
+  <script src="/crm/js/pages.js" defer></script>
+</head>
+
+<body class="admin-body">
+<div class="admin-container">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="sidebar-header">
+      <div class="logo-admin">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>IMTEC</span>
+      </div>
+      <button class="sidebar-close" id="sidebarClose">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="user-info">
+      <div class="user-avatar">A</div>
+      <div class="user-details">
+        <h3>Administrador</h3>
+        <p>IMTEC Piura</p>
+      </div>
+    </div>
+
+    <nav class="admin-menu">
+      <a href="#dashboard"     class="menu-item active" data-view="dashboard">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a href="#productos"     class="menu-item" data-view="products">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Productos</span>
+      </a>
+      <a href="#cotizaciones"  class="menu-item" data-view="sales">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <span>Cotizaciones</span>
+      </a>
+      <a href="#clientes"      class="menu-item" data-view="clients">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Clientes</span>
+      </a>
+      <a href="#servicios"     class="menu-item" data-view="services">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span>Servicios</span>
+      </a>
+      <a href="#reportes"      class="menu-item" data-view="reports">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span>Reportes</span>
+      </a>
+      <a href="#inventario"    class="menu-item" data-view="inventory">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>Inventario</span>
+      </a>
+      <a href="#configuracion" class="menu-item" data-view="settings">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1 0 4.93 19.07 10 10 0 0 0 19.07 4.93z"/></svg>
+        <span>Configuración</span>
+      </a>
+    </nav>
+
+    <a href="#" class="menu-item logout">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span>Cerrar Sesión</span>
+    </a>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <h1 class="page-title" id="pageTitle">Dashboard</h1>
+      <div class="topbar-right">
+        <div class="current-date">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span id="currentDate"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-content">
+
+      <!-- ═══════════ DASHBOARD ═══════════ -->
+      <section id="view-dashboard" class="view active">
+        <section class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon sales">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="stat-info"><h3>Cotizaciones</h3><p class="stat-value" id="dashSalesCount">0</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon income">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="stat-info"><h3>Ingresos</h3><p class="stat-value" id="dashIncome">S/ 0.00</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon clients">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="stat-info"><h3>Clientes</h3><p class="stat-value" id="dashClientsCount">0</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon products">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            </div>
+            <div class="stat-info"><h3>Productos</h3><p class="stat-value" id="dashProductCount">0</p></div>
+          </div>
+        </section>
+
+        <div class="dashboard-grid">
+          <section class="dashboard-card">
+            <div class="card-header">
+              <h2 class="card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Cotizaciones Recientes
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="sales-list" id="dashRecentSales">
+                <div class="empty-products" style="padding:2rem;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:.2;display:block;margin:0 auto .5rem;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <p>Sin cotizaciones aún</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="dashboard-card">
+            <div class="card-header">
+              <h2 class="card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Más Solicitados
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="products-list" id="dashTopProducts">
+                <div class="empty-products" style="padding:2rem;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:.2;display:block;margin:0 auto .5rem;"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                  <p>Sin datos aún</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Alerta stock bajo -->
+        <section class="dashboard-card" style="margin-top:1.5rem;">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Stock Bajo
+            </h2>
+          </div>
+          <div class="card-body">
+            <div id="dashLowStock">
+              <p style="color:var(--text-muted);font-size:.9rem;padding:.5rem 0;">Cargando...</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ═══════════ PRODUCTOS ═══════════ -->
+      <section id="view-products" class="view">
+        <div class="products-header">
+          <div class="products-header-left">
+            <h2>Catálogo de Productos</h2>
+            <span id="productsCount">0 productos registrados</span>
+          </div>
+          <button class="btn-add-product" id="btnAddProduct">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nuevo Producto
+          </button>
+        </div>
+        <div class="products-toolbar">
+          <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchProducts" placeholder="Buscar por nombre, marca, modelo...">
+          </div>
+          <select class="filter-select" id="filterCategory">
+            <option value="">Todas las categorías</option>
+          </select>
+          <button type="button" class="btn-manage-cats-toolbar" id="btnManageCatsToolbar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            Categorías
+          </button>
+        </div>
+        <div class="product-cards-grid" id="productCardsGrid"></div>
+      </section>
+
+      <!-- ═══════════ COTIZACIONES ═══════════ -->
+      <section id="view-sales" class="view">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h2>Cotizaciones</h2>
+            <span id="salesCountLabel">0 cotizaciones registradas</span>
+          </div>
+          <button class="btn-add-product" id="btnAddSale">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nueva Cotización
+          </button>
+        </div>
+
+        <div class="page-stats-row">
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div><span id="salesTotalIncome">S/ 0.00</span><p>Total ingresos</p></div>
+          </div>
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <div><span id="salesTotalItems">0</span><p>Ítems cotizados</p></div>
+          </div>
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div><span id="salesPaidCount">0</span><p>Confirmadas</p></div>
+          </div>
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div><span id="salesPendingCount">0</span><p>Pendientes</p></div>
+          </div>
+        </div>
+
+        <div class="products-toolbar">
+          <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchSales" placeholder="Buscar por número o cliente...">
+          </div>
+          <select class="filter-select" id="filterSalesStatus">
+            <option value="">Todos los estados</option>
+            <option value="confirmado">Confirmado</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="cancelado">Cancelado</option>
+          </select>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="salesTable">
+            <thead>
+              <tr>
+                <th>N° Cot.</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Ítems</th>
+                <th>Total</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="salesTableBody"></tbody>
+          </table>
+        </div>
+        <div class="mobile-list" id="salesMobileList"></div>
+      </section>
+
+      <!-- ═══════════ CLIENTES ═══════════ -->
+      <section id="view-clients" class="view">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h2>Clientes</h2>
+            <span id="clientsCountLabel">0 clientes registrados</span>
+          </div>
+          <button class="btn-add-product" id="btnAddClient">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nuevo Cliente
+          </button>
+        </div>
+        <div class="products-toolbar">
+          <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchClients" placeholder="Buscar por nombre, email o teléfono...">
+          </div>
+          <select class="filter-select" id="filterClientsStatus">
+            <option value="">Todos</option>
+            <option value="activo">Activos</option>
+            <option value="inactivo">Inactivos</option>
+          </select>
+        </div>
+        <div class="clients-grid" id="clientsGrid"></div>
+      </section>
+
+      <!-- ═══════════ SERVICIOS DE REPARACIÓN ═══════════ -->
+      <section id="view-services" class="view">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h2>Servicios de Reparación</h2>
+            <span id="servicesCountLabel">0 órdenes registradas</span>
+          </div>
+          <button class="btn-add-product" id="btnAddService">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nueva Orden
+          </button>
+        </div>
+
+        <div class="page-stats-row">
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <div><span id="svcTotal">0</span><p>Total órdenes</p></div>
+          </div>
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div><span id="svcPending">0</span><p>En proceso</p></div>
+          </div>
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div><span id="svcDone">0</span><p>Completadas</p></div>
+          </div>
+          <div class="mini-stat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div><span id="svcIncome">S/ 0.00</span><p>Ingresos servicio</p></div>
+          </div>
+        </div>
+
+        <div class="products-toolbar">
+          <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchServices" placeholder="Buscar por orden, cliente o equipo...">
+          </div>
+          <select class="filter-select" id="filterServiceStatus">
+            <option value="">Todos los estados</option>
+            <option value="recibido">Recibido</option>
+            <option value="en_proceso">En proceso</option>
+            <option value="completado">Completado</option>
+            <option value="entregado">Entregado</option>
+          </select>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="servicesTable">
+            <thead>
+              <tr>
+                <th>Orden</th>
+                <th>Cliente</th>
+                <th>Equipo</th>
+                <th>Falla</th>
+                <th>Fecha</th>
+                <th>Costo</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="servicesTableBody"></tbody>
+          </table>
+        </div>
+        <div class="mobile-list" id="servicesMobileList"></div>
+      </section>
+
+      <!-- ═══════════ REPORTES ═══════════ -->
+      <section id="view-reports" class="view">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h2>Reportes y Análisis</h2>
+            <span>Resumen general del negocio</span>
+          </div>
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+            <select class="filter-select" id="reportPeriod">
+              <option value="week">Esta semana</option>
+              <option value="month" selected>Este mes</option>
+              <option value="year">Este año</option>
+              <option value="all">Todo el tiempo</option>
+            </select>
+            <button class="btn-export" id="btnExportReport">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Exportar
+            </button>
+          </div>
+        </div>
+
+        <div class="reports-grid">
+          <div class="report-card big">
+            <div class="report-card-header">
+              <h3>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Ingresos por Mes
+              </h3>
+            </div>
+            <div class="report-chart-area" id="incomeChartArea">
+              <div class="chart-bars" id="incomeChart"></div>
+            </div>
+          </div>
+          <div class="report-card">
+            <div class="report-card-header">
+              <h3>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                Por Categoría
+              </h3>
+            </div>
+            <div class="report-list" id="categoryReport"></div>
+          </div>
+          <div class="report-card">
+            <div class="report-card-header">
+              <h3>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Top Clientes
+              </h3>
+            </div>
+            <div class="report-list" id="topClientsReport"></div>
+          </div>
+          <div class="report-card">
+            <div class="report-card-header">
+              <h3>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Stock Bajo
+              </h3>
+            </div>
+            <div class="report-list" id="lowStockReport"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ INVENTARIO ═══════════ -->
+      <section id="view-inventory" class="view">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h2>Control de Inventario</h2>
+            <span>Stock actualizado de todos los productos</span>
+          </div>
+          <button class="btn-add-product" onclick="showView('products')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Ir a Productos
+          </button>
+        </div>
+
+        <div class="products-toolbar">
+          <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchInventory" placeholder="Buscar producto...">
+          </div>
+          <select class="filter-select" id="filterInventoryStatus">
+            <option value="">Todos</option>
+            <option value="ok">Stock OK</option>
+            <option value="low">Stock Bajo (&lt;10)</option>
+            <option value="empty">Sin stock</option>
+          </select>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="inventoryTable">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Stock Actual</th>
+                <th>Estado</th>
+                <th>Actualizar Stock</th>
+              </tr>
+            </thead>
+            <tbody id="inventoryTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ═══════════ CONFIGURACIÓN ═══════════ -->
+      <section id="view-settings" class="view">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h2>Configuración</h2>
+            <span>Personaliza tu sistema</span>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <h3>Datos del Negocio</h3>
+            </div>
+            <div class="settings-body">
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Nombre del negocio</label>
+                <input type="text" id="settingBusinessName" value="IMTEC Piura">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>RUC</label>
+                <input type="text" id="settingRUC" placeholder="20XXXXXXXXX">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Dirección</label>
+                <input type="text" id="settingAddress" value="Av. Loreto 212, Barrio Norte, Piura">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Teléfono</label>
+                <input type="text" id="settingPhone" value="969981040 / 947299100 / 942086775">
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem;">
+                <label>Email de contacto</label>
+                <input type="email" id="settingEmail" value="imtecpiura@hotmail.com">
+              </div>
+              <button class="btn btn-primary" onclick="saveSettings()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:.4rem;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Guardar cambios
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <h3>Configuración de Cotizaciones</h3>
+            </div>
+            <div class="settings-body">
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Prefijo de cotización</label>
+                <input type="text" id="settingInvPrefix" value="COT-" placeholder="COT-">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>IGV (%)</label>
+                <input type="number" id="settingIGV" value="18" min="0" max="100">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Días de validez</label>
+                <input type="number" id="settingDueDays" value="15" min="1">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Nota en cotizaciones</label>
+                <textarea id="settingInvNote" rows="3" placeholder="Precios sujetos a variación...">Precios sujetos a variación sin previo aviso. Cotización válida por los días indicados.</textarea>
+              </div>
+              <button class="btn btn-primary" onclick="saveSettings()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:.4rem;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Guardar cambios
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <h3>Seguridad</h3>
+            </div>
+            <div class="settings-body">
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Contraseña actual</label>
+                <input type="password" placeholder="••••••••">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label>Nueva contraseña</label>
+                <input type="password" placeholder="••••••••">
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem;">
+                <label>Confirmar contraseña</label>
+                <input type="password" placeholder="••••••••">
+              </div>
+              <button class="btn btn-primary" onclick="showToast('Contraseña actualizada ✓')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:.4rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Cambiar contraseña
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-card danger-zone">
+            <div class="settings-card-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <h3>Zona de Peligro</h3>
+            </div>
+            <div class="settings-body">
+              <p class="danger-desc">Estas acciones son irreversibles. Procede con cuidado.</p>
+              <div style="display:flex;flex-direction:column;gap:.75rem;margin-top:1rem;">
+                <button class="btn btn-danger" onclick="if(confirm('¿Limpiar TODAS las cotizaciones?')) { allSales=[]; saveSales(); renderSalesTable(); showToast('Cotizaciones eliminadas'); }">
+                  Limpiar todas las cotizaciones
+                </button>
+                <button class="btn btn-danger" onclick="if(confirm('¿Eliminar TODOS los clientes?')) { allClients=[]; saveClients(); renderClientsGrid(); showToast('Clientes eliminados'); }">
+                  Eliminar todos los clientes
+                </button>
+                <button class="btn btn-danger" onclick="if(confirm('¿Restablecer TODO el sistema?')) { localStorage.clear(); location.reload(); }">
+                  Resetear sistema completo
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- LOADER -->
+  <div class="loading-overlay" id="pageLoader">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="loader-icon"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  </div>
+
+  <!-- ═══════════════ MODAL PRODUCTO ═══════════════ -->
+  <div class="product-modal-overlay" id="productModalOverlay">
+    <div class="product-modal">
+      <div class="product-modal-header">
+        <h2 id="modalTitle">Nuevo Producto</h2>
+        <button class="modal-close" id="btnCloseModal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="product-modal-body">
+        <form id="productForm">
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>ID</label>
+              <input type="number" id="productId" disabled>
+            </div>
+            <div class="form-group">
+              <label>Nombre *</label>
+              <input type="text" id="productName" required placeholder="Ej: Tóner HP 85A Negro">
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Imagen</label>
+              <div style="display:flex;gap:.7rem;">
+                <input type="url" id="productImage" placeholder="URL de imagen" style="flex:1;">
+                <input type="file" id="fileInput" accept="image/*" style="display:none;">
+                <button type="button" class="btn-upload-image" id="btnUploadImage">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+                  Subir
+                </button>
+              </div>
+              <div style="margin-top:.75rem;">
+                <img id="imagePreview" src="" alt="Vista previa" style="max-width:160px;border-radius:8px;display:none;box-shadow:0 4px 12px rgba(0,0,0,.1);">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Categoría *</label>
+              <div class="category-field-wrapper">
+                <select id="productCategory" required>
+                  <option value="">-- Seleccionar --</option>
+                </select>
+                <button type="button" class="btn-manage-cats" id="btnManageCatsForm" title="Gestionar categorías">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                  Gestionar
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Marca</label>
+              <input type="text" id="productBrand" placeholder="HP, Canon, Epson...">
+            </div>
+            <div class="form-group">
+              <label>Modelo / Referencia</label>
+              <input type="text" id="productModel" placeholder="85A, PG-745, T664...">
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem;">
+            <label>Descripción *</label>
+            <textarea id="productDescription" rows="3" required placeholder="Compatible con impresoras..."></textarea>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Stock *</label>
+              <input type="number" id="productStock" min="0" required placeholder="0">
+            </div>
+            <div class="form-group">
+              <label>¿Destacar?</label>
+              <div class="checkbox-group">
+                <input type="checkbox" id="productBestSelling">
+                <label for="productBestSelling">Marcar como más vendido</label>
+              </div>
+            </div>
+          </div>
+          <div style="margin-bottom:1.5rem;">
+            <label class="presentations-label">Presentaciones / Precios *</label>
+            <div style="margin-top:.7rem;" id="presentationsContainer"></div>
+            <button type="button" class="btn-add-presentation-modal" id="btnAddPresentation">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Agregar Presentación
+            </button>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="btnCancelForm">Cancelar</button>
+            <button type="submit" class="btn btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:.3rem;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Guardar Producto
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ MODAL COTIZACIÓN ═══════════════ -->
+  <div class="product-modal-overlay" id="saleModalOverlay">
+    <div class="product-modal" style="max-width:700px;">
+      <div class="product-modal-header" style="background:linear-gradient(135deg,#0B8538,#12A847);">
+        <h2 id="saleModalTitle">Nueva Cotización</h2>
+        <button class="modal-close" id="btnCloseSaleModal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="product-modal-body">
+        <form id="saleForm">
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>N° Cotización</label>
+              <input type="text" id="saleInvoice" readonly style="background:#f7fafc;">
+            </div>
+            <div class="form-group">
+              <label>Fecha *</label>
+              <input type="date" id="saleDate" required>
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Cliente *</label>
+              <select id="saleClient" required>
+                <option value="">-- Seleccionar cliente --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Estado *</label>
+              <select id="saleStatus" required>
+                <option value="confirmado">Confirmado</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="cancelado">Cancelado</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-bottom:1rem;">
+            <label class="presentations-label">Productos cotizados *</label>
+            <div id="saleItemsContainer" style="margin-top:.7rem;"></div>
+            <button type="button" class="btn-add-presentation-modal" id="btnAddSaleItem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Agregar producto
+            </button>
+          </div>
+          <div class="sale-total-row">
+            <span>Total:</span>
+            <strong id="saleTotalDisplay">S/ 0.00</strong>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem;">
+            <label>Notas</label>
+            <textarea id="saleNotes" rows="2" placeholder="Observaciones opcionales..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="btnCancelSaleForm">Cancelar</button>
+            <button type="submit" class="btn btn-primary" style="background:linear-gradient(135deg,#0B8538,#12A847);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:.3rem;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Registrar Cotización
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ MODAL CLIENTE ═══════════════ -->
+  <div class="product-modal-overlay" id="clientModalOverlay">
+    <div class="product-modal" style="max-width:580px;">
+      <div class="product-modal-header" style="background:linear-gradient(135deg,#111111,#333333);">
+        <h2 id="clientModalTitle">Nuevo Cliente</h2>
+        <button class="modal-close" id="btnCloseClientModal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="product-modal-body">
+        <form id="clientForm">
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Nombre completo / Empresa *</label>
+              <input type="text" id="clientName" required placeholder="Ej: Empresa ABC SAC">
+            </div>
+            <div class="form-group">
+              <label>RUC / DNI</label>
+              <input type="text" id="clientDNI" placeholder="20XXXXXXXXX">
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="clientEmail" placeholder="contacto@empresa.com">
+            </div>
+            <div class="form-group">
+              <label>Teléfono / WhatsApp</label>
+              <input type="text" id="clientPhone" placeholder="+51 9XX XXX XXX">
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem;">
+            <label>Dirección</label>
+            <input type="text" id="clientAddress" placeholder="Av., Calle, N°, Ciudad">
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Estado</label>
+              <select id="clientStatus">
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Notas</label>
+              <input type="text" id="clientNotes" placeholder="Observaciones...">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="btnCancelClientForm">Cancelar</button>
+            <button type="submit" class="btn btn-primary" style="background:linear-gradient(135deg,#111111,#333333);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:.3rem;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Guardar Cliente
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ MODAL SERVICIO ═══════════════ -->
+  <div class="product-modal-overlay" id="serviceModalOverlay">
+    <div class="product-modal" style="max-width:640px;">
+      <div class="product-modal-header" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">
+        <h2 id="serviceModalTitle">Nueva Orden de Servicio</h2>
+        <button class="modal-close" id="btnCloseServiceModal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="product-modal-body">
+        <form id="serviceForm">
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>N° Orden</label>
+              <input type="text" id="serviceOrder" readonly style="background:#f7fafc;">
+            </div>
+            <div class="form-group">
+              <label>Fecha *</label>
+              <input type="date" id="serviceDate" required>
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Cliente *</label>
+              <select id="serviceClient" required>
+                <option value="">-- Seleccionar cliente --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Estado *</label>
+              <select id="serviceStatus" required>
+                <option value="recibido">Recibido</option>
+                <option value="en_proceso">En proceso</option>
+                <option value="completado">Completado</option>
+                <option value="entregado">Entregado</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Equipo / Impresora *</label>
+              <input type="text" id="serviceEquipment" required placeholder="HP LaserJet P1102, Epson L3110...">
+            </div>
+            <div class="form-group">
+              <label>Marca</label>
+              <input type="text" id="serviceEquipmentBrand" placeholder="HP, Canon, Epson...">
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem;">
+            <label>Falla reportada *</label>
+            <textarea id="serviceFault" rows="2" required placeholder="El cliente reporta que..."></textarea>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem;">
+            <label>Diagnóstico técnico</label>
+            <textarea id="serviceDiagnosis" rows="2" placeholder="Se detectó..."></textarea>
+          </div>
+          <div class="form-row" style="margin-bottom:1.2rem;">
+            <div class="form-group">
+              <label>Costo del servicio (S/.)</label>
+              <input type="number" id="serviceCost" min="0" step="0.01" placeholder="0.00">
+            </div>
+            <div class="form-group">
+              <label>Fecha de entrega estimada</label>
+              <input type="date" id="serviceDeliveryDate">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="btnCancelServiceForm">Cancelar</button>
+            <button type="submit" class="btn btn-primary" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:.3rem;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Guardar Orden
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /admin-container -->
+
+<!-- MODAL CATEGORÍAS -->
+<div class="cat-modal-overlay" id="catModalOverlay">
+  <div class="cat-modal">
+    <div class="cat-modal-header">
+      <h2>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Gestionar Categorías
+      </h2>
+      <button class="modal-close" id="btnCloseCatModal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-add-row">
+        <input type="text" id="newCatInput" placeholder="Nueva categoría (ej: Tóner Láser, Drum...)" maxlength="40">
+        <button type="button" class="btn-cat-add" id="btnSaveCat">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Agregar
+        </button>
+      </div>
+      <p class="cat-list-label">Categorías disponibles</p>
+      <div class="cat-chips-list" id="catChipsList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+</body>
+</html>

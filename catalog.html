@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - IMTEC Piura | Tóner, Tintas y Consumibles</title>
+  <meta name="description" content="Catálogo completo de tóner compatible IMTEC, tóner original, tintas para sistema continuo, drum, cintas matriciales y servicios de reparación en Piura.">
+  <link rel="stylesheet" href="assets/css/globals.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/catalog.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- SCRIPTS -->
+  <script src="assets/js/toast.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+</head>
+<body>
+ 
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        IMTEC<span>.</span>
+      </div>
+
+      <nav id="nav">
+        <a href="index.html">Inicio</a>
+        <a href="catalog.html">Catálogo</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+
+      
+      <div class="header-cta">
+        <button class="cart-icon" id="cartBtn" title="Ver cotización">
+          <!-- Printer icon -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Cotizar
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" style="background-image: url('https://img.freepik.com/free-photo/side-view-employee-using-printer_23-2149713682.jpg?t=st=1773383531~exp=1773387131~hmac=495039a5aec1473b45a01f584373805753eda94b0e67bd506375de6356181bf0&w=1060');"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__noise"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Importadores · Tóner · Consumibles · Piura</p>
+
+      <h1>IMTEC<br><em>Piura Catalogo</em></h1>
+
+      <div class="hero-divider">
+        <span></span><i>✦</i><span></span>
+      </div>
+
+      <p class="hero-sub">
+        Somos importadores especializados en tóner y consumibles de impresión.<br>
+        Marca propia IMTEC — calidad, rendimiento y precio justo para su empresa.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- SECCIÓN CATÁLOGO -->
+  <section class="catalog-section">
+    <div class="catalog-layout">
+
+      <!-- SIDEBAR FILTROS -->
+      <aside class="filters-sidebar">
+        <div class="filters-scroll">
+
+          <div class="sidebar-heading">
+            <div class="sidebar-heading-line"></div>
+            <span>Filtrar</span>
+            <div class="sidebar-heading-line"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Disponibilidad</h3>
+            <label class="filter-checkbox">
+              <input type="checkbox" id="inStockFilter" checked>
+              <span>En stock (<span id="inStockCount">12</span>)</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" id="outOfStockFilter">
+              <span>Agotado (<span id="outStockCount">0</span>)</span>
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Precio (S/.)</h3>
+            <div class="price-range">
+              <div class="price-slider-container">
+                <div class="slider-track" id="sliderTrack"></div>
+                <input type="range" id="minPriceRange" min="0" max="500" value="0" step="1" class="price-slider">
+                <input type="range" id="maxPriceRange" min="0" max="500" value="500" step="1" class="price-slider">
+              </div>
+              <div class="price-inputs">
+                <div class="price-input-group">
+                  <span class="currency">S/</span>
+                  <input type="number" id="minPriceInput" value="0" min="0" max="500">
+                </div>
+                <div class="price-input-group">
+                  <span class="currency">S/</span>
+                  <input type="number" id="maxPriceInput" value="500" min="0" max="500">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Categoría</h3>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="toner-laser" class="category-filter">
+              <span>🖨️ Tóner Compatible IMTEC</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="toner-original" class="category-filter">
+              <span>✅ Tóner Original</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="tintas" class="category-filter">
+              <span>🎨 Tintas Sistema Continuo</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="accesorios-impresion" class="category-filter">
+              <span>🔧 Drum y Accesorios</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="servicios" class="category-filter">
+              <span>🛠️ Servicios</span>
+            </label>
+          </div>
+
+          <button class="btn btn-secondary" id="clearFilters">
+            Limpiar filtros
+          </button>
+
+        </div>
+      </aside>
+
+      <!-- ÁREA PRODUCTOS -->
+      <div class="products-main">
+
+        <!-- Buscador -->
+        <div class="products-search">
+          <div class="search-wrapper">
+            <svg class="search-icon" width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M11 11l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar tóner, tintas, modelo de impresora...">
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="products-header">
+          <p class="products-count-label">
+            Mostrando <strong id="productsCount">0</strong> productos
+          </p>
+          <div class="products-controls">
+            <select id="sortSelect" class="sort-select">
+              <option value="">Ordenar por</option>
+              <option value="best-selling">⭐ Más solicitado</option>
+              <option value="alphabetical-asc">A → Z</option>
+              <option value="alphabetical-desc">Z → A</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="date-asc">Más recientes</option>
+              <option value="date-desc">Más antiguos</option>
+            </select>
+
+            <div class="view-options">
+              <button class="view-btn" data-columns="2" title="2 columnas">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+                  <rect x="1" y="1" width="7" height="7"/><rect x="10" y="1" width="7" height="7"/>
+                  <rect x="1" y="10" width="7" height="7"/><rect x="10" y="10" width="7" height="7"/>
+                </svg>
+              </button>
+              <button class="view-btn active" data-columns="3" title="3 columnas">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+                  <rect x="1" y="1" width="4" height="4"/><rect x="7" y="1" width="4" height="4"/><rect x="13" y="1" width="4" height="4"/>
+                  <rect x="1" y="7" width="4" height="4"/><rect x="7" y="7" width="4" height="4"/><rect x="13" y="7" width="4" height="4"/>
+                  <rect x="1" y="13" width="4" height="4"/><rect x="7" y="13" width="4" height="4"/><rect x="13" y="13" width="4" height="4"/>
+                </svg>
+              </button>
+              <button class="view-btn" data-columns="4" title="4 columnas">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+                  <rect x="1" y="1" width="3" height="3"/><rect x="6" y="1" width="3" height="3"/><rect x="11" y="1" width="3" height="3"/><rect x="15" y="1" width="2" height="3"/>
+                  <rect x="1" y="6" width="3" height="3"/><rect x="6" y="6" width="3" height="3"/><rect x="11" y="6" width="3" height="3"/><rect x="15" y="6" width="2" height="3"/>
+                  <rect x="1" y="11" width="3" height="3"/><rect x="6" y="11" width="3" height="3"/><rect x="11" y="11" width="3" height="3"/><rect x="15" y="11" width="2" height="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aviso de cotización -->
+        <div style="background: var(--moss-light); border-left: 3px solid var(--primary); padding: .875rem 1.25rem; margin-bottom: 1.5rem; border-radius: 0 4px 4px 0; font-size:.9rem; color: var(--text-muted);">
+          💡 <strong style="color:var(--primary);">Nota:</strong> Los precios son referenciales. Para cotizaciones exactas por volumen o modelos específicos, contáctenos vía WhatsApp al <a href="https://wa.me/51969981040" target="_blank" style="color:var(--primary);font-weight:600;">969 981 040</a>.
+        </div>
+
+        <!-- Grid -->
+        <div class="products-grid grid-3" id="productsGrid">
+          <!-- Cards inyectadas por products.js -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-watermark">IMTEC</div>
+
+    <div class="footer-main">
+      <div class="footer-grid">
+
+        <!-- MARCA -->
+        <div class="footer-brand">
+          <p class="footer-logo">IMTEC<span>.</span></p>
+          <p class="footer-tagline">Import &amp; Tecnología EIRL · Piura</p>
+          <div class="footer-brand-divider">
+            <span></span>
+            <svg width="8" height="8" viewBox="0 0 10 10" fill="rgba(255,255,255,.5)">
+              <path d="M5 0L6.5 3.5L10 5L6.5 6.5L5 10L3.5 6.5L0 5L3.5 3.5Z"/>
+            </svg>
+            <span></span>
+          </div>
+          <p class="footer-desc">
+            Importadores especializados en tóner compatible, tintas para sistema continuo
+            y reparación de impresoras láser en Piura. Marca propia IMTEC — calidad garantizada.
+          </p>
+          <div class="footer-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Lun–Sáb 9:00am – 8:00pm
+          </div>
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="footer-col">
+          <h5>Explorar</h5>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- CATEGORÍAS -->
+        <div class="footer-col">
+          <h5>Productos</h5>
+          <ul>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <polyline points="6 9 6 2 18 2 18 9"/>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                  <rect x="6" y="14" width="12" height="8"/>
+                </svg>
+                Tóner Compatible IMTEC
+              </a>
+            </li>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+                Tóner Original
+              </a>
+            </li>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+                </svg>
+                Tintas Sistema Continuo
+              </a>
+            </li>
+            <li>
+              <a href="catalog.html" style="display:flex;align-items:center;gap:.5rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.7">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+                Reparación Impresoras
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-col">
+          <h5>Contáctenos</h5>
+          <div style="margin-bottom: 1.75rem;">
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <a href="tel:+51942086775">942 086 775 / 985 851 870</a>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <a href="https://wa.me/51969981040" target="_blank">WhatsApp: 969 981 040</a>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <a href="mailto:imtecpiura@hotmail.com">imtecpiura@hotmail.com</a>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <a href="https://maps.google.com/?q=Av+Loreto+212+Piura" target="_blank">Av. Loreto 212, Barrio Norte, Piura</a>
+            </div>
+
+          </div>
+
+          <div class="footer-social">
+            <a href="https://www.instagram.com/imtec_peru" target="_blank">
+              <div class="footer-social-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <span>@imtec_peru</span>
+            </a>
+            <a href="https://www.facebook.com/ImtecPiura" target="_blank">
+              <div class="footer-social-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </div>
+              <span>ImtecPiura</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">
+        &copy; 2026 <strong>Import &amp; Tecnología EIRL (IMTEC Piura)</strong>. Todos los derechos reservados.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Política de Privacidad</a>
+        <div class="footer-bottom-sep"></div>
+        <a href="#">Términos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRITO LATERAL -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>🖨️ Mi Cotización</h3>
+      <button class="cart-close-btn" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-sidebar-footer">
+      <div class="cart-total">
+        <span>Total estimado:</span>
+        <span id="cartTotal">S/. 0.00</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn" style="width:100%; margin-bottom:.75rem;" onclick="window.location.href='cart.html'">
+        Ver cotización completa →
+      </button>
+      <button class="btn btn-secondary" style="width:100%;" onclick="closeCart()">
+        Seguir viendo
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Producto</h2>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="" class="modal-image">
+        <div class="modal-details">
+          <h3>Descripción</h3>
+          <p id="modalDesc">Consumible IMTEC de alta calidad. Consulte disponibilidad y precios.</p>
+          <div class="presentations-section">
+            <h3>Opciones Disponibles</h3>
+            <div id="presentationsContainer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+        <button class="btn btn-primary" onclick="addSelectedToCart()">Agregar a Cotización</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
