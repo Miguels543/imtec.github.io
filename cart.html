@@ -212,6 +212,20 @@
       </form>
     </div>
   </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/roses.github.io/sw.js')
+          .then((reg) => {
+            console.log('[SW] Registrado con éxito. Scope:', reg.scope);
+          })
+          .catch((err) => {
+            console.warn('[SW] Error al registrar:', err);
+          });
+      });
+    }
+  </script>
 
 </body>
 </html>
